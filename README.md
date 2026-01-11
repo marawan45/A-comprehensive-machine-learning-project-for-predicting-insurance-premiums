@@ -2,19 +2,19 @@
 ## A comprehensive machine learning project for predicting insurance premiums using multiple regression models and advanced feature engineering techniques.
 ## 📋 Table of Contents
 
-## Overview
-## Features
-## Dataset
-## Installation
-## Project Structure
-## Methodology
-## Models & Results
-## Visualizations
-## Key Insights
-## Technologies Used
-## Usage
-## Contributing
-## License
+### Overview
+### Features
+### Dataset
+### Installation
+### Project Structure
+### Methodology
+### Models & Results
+### Visualizations
+### Key Insights
+### Technologies Used
+### Usage
+### Contributing
+### License
 
 ## 🎯 Overview
 This project implements an end-to-end machine learning pipeline to predict insurance premiums based on customer demographics, policy details, and behavioral factors. The solution explores multiple regression algorithms, feature engineering techniques, and dimensionality reduction methods to achieve optimal prediction accuracy.
@@ -86,11 +86,11 @@ matplotlib==3.7.1
 missingno==0.5.2
 lightgbm==4.6.0
 statsmodels==0.13.5
-```
 
-## 📁 Project Structure
-```
-insurance-premium-prediction/
+
+## Project Structure
+
+**insurance-premium-prediction/**
 │
 ├── DS_Project.ipynb          # Main Jupyter notebook
 ├── requirements.txt           # Project dependencies
