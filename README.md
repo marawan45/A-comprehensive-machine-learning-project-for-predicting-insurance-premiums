@@ -1,20 +1,6 @@
 # Insurance Premium Prediction Project
 ## A comprehensive machine learning project for predicting insurance premiums using multiple regression models and advanced feature engineering techniques.
-## 📋 Table of Contents
 
-### Overview
-### Features
-### Dataset
-### Installation
-### Project Structure
-### Methodology
-### Models & Results
-### Visualizations
-### Key Insights
-### Technologies Used
-### Usage
-### Contributing
-### License
 
 ## 🎯 Overview
 This project implements an end-to-end machine learning pipeline to predict insurance premiums based on customer demographics, policy details, and behavioral factors. The solution explores multiple regression algorithms, feature engineering techniques, and dimensionality reduction methods to achieve optimal prediction accuracy.
@@ -142,30 +128,45 @@ Variance explained analysis
 Model performance with reduced features
 
 ## 📈 Models & Results
-Model Performance Comparison
-ModelMAEMSER² ScoreNotesLinear Regression1.13e-122.17e-241.0Best baseline performanceRidge (α=0.01)1.66e-044.55e-081.0Excellent with regularizationLasso (α=0.01)7.67e-039.71e-051.0Good feature selectionRandom Forest0.0650.2440.99999997Robust to outliersGradient Boosting2.53813.3740.9999815Good generalization
-Best Hyperparameters
-Random Forest:
 
-n_estimators: 200
-max_depth: 30
-min_samples_split: 2
-min_samples_leaf: 1
+### Model Performance Comparison
 
-Gradient Boosting:
+| Model                 | MAE          | MSE         | R² Score      | Notes                        |
+|-----------------------|-------------|------------|---------------|-------------------------------|
+| Linear Regression     | 1.13e-12    | 2.17e-24   | 1.0           | Best baseline performance     |
+| Ridge (α=0.01)        | 1.66e-04    | 4.55e-08   | 1.0           | Excellent with regularization |
+| Lasso (α=0.01)        | 7.67e-03    | 9.71e-05   | 1.0           | Good feature selection        |
+| Random Forest         | 0.065       | 0.244      | 0.99999997    | Robust to outliers            |
+| Gradient Boosting     | 2.538       | 13.374     | 0.9999815     | Good generalization           |
 
-n_estimators: 200
-learning_rate: 0.05
-max_depth: 5
+---
 
-PCA Results
+### Best Hyperparameters
 
-11 components explain 90% of variance
-15 components explain >99% of variance
-Linear Regression with 11 PCA components:
+**Random Forest**
+- `n_estimators`: 200  
+- `max_depth`: 30  
+- `min_samples_split`: 2  
+- `min_samples_leaf`: 1  
 
-MAE: 5.40e-05
-R²: 0.9999999999999919
+**Gradient Boosting**
+- `n_estimators`: 200  
+- `learning_rate`: 0.05  
+- `max_depth`: 5  
+
+---
+
+### PCA Results
+
+| Components | Variance Explained |
+|------------|------------------|
+| 11         | 90%              |
+| 15         | >99%             |
+
+**Linear Regression with 11 PCA components**  
+- **MAE**: 5.40e-05  
+- **R²**: 0.9999999999999919
+
 
 
 
@@ -255,17 +256,17 @@ python# Load and preprocess data
 train_data = pd.read_csv('data/train_sample.csv')
 train_sampled = train_data.sample(n=50000)
 
-# Train Random Forest
+### Train Random Forest
 from sklearn.ensemble import RandomForestRegressor
 rf_model = RandomForestRegressor(n_estimators=200, max_depth=30)
 rf_model.fit(X_train_scaled, y_train)
 
-# Make predictions
+### Make predictions
 predictions = rf_model.predict(X_test_scaled)
 Generating Visualizations
 pythonimport plotly.express as px
 
-# Distribution plot
+### Distribution plot
 fig = px.histogram(train_sampled, x='Premium Amount', 
                    color='Policy Type',
                    title='Premium Distribution by Policy Type')
