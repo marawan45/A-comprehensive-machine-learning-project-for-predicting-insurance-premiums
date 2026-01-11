@@ -55,78 +55,88 @@ bash# Clone the repository
 git clone https://github.com/yourusername/insurance-premium-prediction.git
 cd insurance-premium-prediction
 
-# Create virtual environment
+## Create virtual environment
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
 
-# Install dependencies
+## 🚀 Install Dependencies
+
+### Install the required Python packages using:
+
+```bash
 pip install -r requirements.txt
 Required Libraries
-txtnumpy==1.26.4
-pandas==1.5.3
-plotly==5.9.0
-scikit-learn==1.3.0
-scipy==1.10.1
-seaborn==0.12.2
-matplotlib==3.7.1
-missingno==0.5.2
-lightgbm==4.6.0
-statsmodels==0.13.5
+Library	Version
+numpy	1.26.4
+pandas	1.5.3
+plotly	5.9.0
+scikit-learn	1.3.0
+scipy	1.10.1
+seaborn	0.12.2
+matplotlib	3.7.1
+missingno	0.5.2
+lightgbm	4.6.0
+statsmodels	0.13.5
 
-
-## Project Structure
-
-**insurance-premium-prediction/**
+📁 Project Structure
+bash
+Copy code
+insurance-premium-prediction/
 │
 ├── DS_Project.ipynb          # Main Jupyter notebook
-├── requirements.txt           # Project dependencies
+├── requirements.txt          # Project dependencies
 ├── README.md                 # Project documentation
-
-## 🔬 Methodology
-1. Data Preprocessing
-
+🔬 Methodology
+1️⃣ Data Preprocessing
 Missing Value Imputation:
 
-Numerical: Mean imputation
-Categorical: Mode imputation
+Numerical → Mean
 
+Categorical → Mode
 
-Date Feature Engineering: Extracted year, month, day from Policy Start Date
-Temporal Features: Created "Days Since Policy Start" and "Years Since Policy Start"
+Date Feature Engineering: Extracted year, month, and day from Policy Start Date
+
+Temporal Features: Created Days Since Policy Start and Years Since Policy Start
+
 Duplicate Removal: Verified no duplicate records
 
-2. Exploratory Data Analysis
-
+2️⃣ Exploratory Data Analysis (EDA)
 Distribution analysis of numerical features
+
 Correlation analysis between features
+
 Categorical feature relationships with target variable
+
 Interactive visualizations using Plotly
 
-3. Feature Engineering
-
+3️⃣ Feature Engineering
 Interaction Terms:
 
-Income_Per_Dependent: Annual Income / (Number of Dependents + 1)
-Claims_Ratio: Previous Claims / (Insurance Duration + 1)
+Income_Per_Dependent = Annual Income / (Number of Dependents + 1)
 
+Claims_Ratio = Previous Claims / (Insurance Duration + 1)
 
-Mutual Information Analysis: Identified most informative categorical features
+Mutual Information Analysis: Identify the most informative categorical features
 
-4. Model Development
+4️⃣ Model Development
 Implemented and compared multiple models:
 
 Linear Regression (Baseline)
+
 Ridge Regression (L2 Regularization)
+
 Lasso Regression (L1 Regularization)
+
 Random Forest Regressor
+
 Gradient Boosting Regressor
 
-5. Dimensionality Reduction
-
+5️⃣ Dimensionality Reduction
 PCA analysis with 15 components
-Variance explained analysis
-Model performance with reduced features
 
+Variance explained analysis
+
+Model performance evaluation with reduced features
 ## 📈 Models & Results
 
 ### Model Performance Comparison
