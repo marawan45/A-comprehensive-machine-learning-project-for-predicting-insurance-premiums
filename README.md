@@ -137,6 +137,7 @@ PCA analysis with 15 components
 Variance explained analysis
 
 Model performance evaluation with reduced features
+```
 ## 📈 Models & Results
 
 ### Model Performance Comparison
